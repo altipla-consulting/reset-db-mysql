@@ -1,0 +1,43 @@
+{
+  "name": "reset-db-mysql",
+  "version": "0.0.0",
+  "description": "Reset a MySQL database to an empty state recreating it if needed.",
+  "main": "dist/cli.js",
+  "bin": "./dist/cli.js",
+  "types": "./dist/cli.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "pkgroll",
+    "lint": "tsc --noEmit && eslint --ext .ts src",
+    "fix": "eslint --fix --ext .ts src",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altipla-consulting/reset-db-mysql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/altipla-consulting/reset-db-mysql/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/altipla-consulting/reset-db-mysql#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Altipla Consulting",
+  "license": "MIT",
+  "devDependencies": {
+    "@altipla/eslint-config-ts": "^0.9.0",
+    "@types/minimist": "^1.2.5",
+    "@types/node": "^20.10.4",
+    "pkgroll": "^2.0.1",
+    "tsx": "^4.6.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "minimist": "^1.2.8",
+    "mysql2": "^3.6.5"
+  }
+}
