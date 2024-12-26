@@ -1,4 +1,3 @@
-
 import mysql from 'mysql2/promise'
 import dotenv from 'dotenv'
 import argv from 'minimist'
@@ -6,11 +5,12 @@ import argv from 'minimist'
 dotenv.config()
 
 let args = argv(process.argv.slice(2))
-if (!process.env.DATABASE_URL && !args.url) {
+let url = args.url || process.env.DATABASE_URL
+if (!url) {
   throw new Error('define DATABASE_URL environment variable or --url argument')
 }
 
-let u = new URL(process.env.DATABASE_URL!)
+let u = new URL(url)
 let dbname = '`' + u.pathname.slice(1) + '`'
 u.pathname = '/mysql'
 
